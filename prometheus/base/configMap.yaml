@@ -2,7 +2,7 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: prometheus-config
-  namespace: meet-stackit
+  namespace: default
   uid: 3d0938ad-d10f-452b-9012-60bcba62e5f1
   resourceVersion: '5531941'
   creationTimestamp: '2022-05-05T13:29:10Z'
