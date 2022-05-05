@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: meet-stackit-test
+    scraper: meet-stackit-prom
+  name: meet-stackit-test
+spec:
+  replicas: 2
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: meet-stackit-test
+  template:
+    metadata:
+      labels:
+        app: meet-stackit-test
+        scraper: meet-stackit-prom
+    spec:
+      containers:
+      - image: hoehne/meet-stackit-test:latest
+        name: meet-stackit-test
+        resources:
+          requests:
+            memory: 100Mi
+            cpu: 150m
+          limits:
+            memory: 600Mi
+            cpu: 500m
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: actuator/health
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: actuator/health
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: meet-stackit-test
+    scraper: meet-stackit-prom
+  name: meet-stackit-test-service
+spec:
+  ports:
+  - name: web
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: meet-stackit-test
+  type: ClusterIP
+          
