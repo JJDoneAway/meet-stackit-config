@@ -12,7 +12,7 @@ spec:
     path: prometheus
   destination: 
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: meet-stackit
 
   syncPolicy:
     syncOptions:

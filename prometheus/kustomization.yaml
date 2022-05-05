@@ -6,4 +6,4 @@ resources:
   - base/configMap.yaml
   - base/deployPrometheus.yaml
 
-namespace: default
+namespace: meet-stackit
