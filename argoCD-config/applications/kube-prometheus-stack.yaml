@@ -14,6 +14,24 @@ spec:
           enabled: false
         prometheus:
           enabled: false
+        kubeApiServer:
+          enabled: false
+        kubelet:
+          enabled: false
+        kubeControllerManager:
+          enabled: false
+        coreDns:
+          enabled: false
+        kubeDns:
+          enabled: false
+        kubeEtcd:
+          enabled: false
+        kubeScheduler:
+          enabled: false
+        kubeProxy:
+          enabled: false
+        kubeStateMetrics:
+          enabled: false
       skipCrds: true
     chart: kube-prometheus-stack
   destination:
