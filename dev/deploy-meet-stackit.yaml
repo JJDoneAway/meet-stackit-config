@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: meet-stackit
   labels:
     app: meet-stackit
     scraper: meet-stackit-prom
-  name: meet-stackit
 spec:
   replicas: 3
   revisionHistoryLimit: 0
@@ -44,10 +44,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  name: meet-stackit-service
   labels:
     app: meet-stackit
     scraper: meet-stackit-prom
-  name: meet-stackit-service
+  annotations:
+    prometheus.io/path: "/actuator/prometheus"
 spec:
   ports:
   - name: web
