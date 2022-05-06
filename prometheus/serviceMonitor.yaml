@@ -11,6 +11,7 @@ spec:
       app: meet-stackit
   endpoints:
   - port: web
+    path: /actuator/prometheus
 
 ---
 apiVersion: monitoring.coreos.com/v1
@@ -26,3 +27,4 @@ spec:
       app: meet-stackit-test
   endpoints:
   - port: web
+    path: /actuator/prometheus

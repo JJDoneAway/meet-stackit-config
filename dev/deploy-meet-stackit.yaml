@@ -18,7 +18,7 @@ spec:
         scraper: meet-stackit-prom
     spec:
       containers:
-      - image: hoehne/meet-stackit:latest
+      - image: hoehne/meet-stackit:1
         name: meet-stackit
         resources:
           requests:
@@ -48,8 +48,7 @@ metadata:
   labels:
     app: meet-stackit
     scraper: meet-stackit-prom
-  annotations:
-    prometheus.io/path: "/actuator/prometheus"
+
 spec:
   ports:
   - name: web
