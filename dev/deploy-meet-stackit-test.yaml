@@ -48,6 +48,9 @@ metadata:
     app: meet-stackit-test
     scraper: meet-stackit-prom
   name: meet-stackit-test-service
+  annotations:
+    prometheus.io/path: "/actuator/prometheus"
+
 spec:
   ports:
   - name: web

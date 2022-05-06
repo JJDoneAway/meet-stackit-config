@@ -4,6 +4,9 @@ This repo is used to install all the stuff we need to K8N via ArgoCD
 # Stuff to read or to watch
 * Install ArgoCD https://argo-cd.readthedocs.io/en/stable/getting_started/#1-install-argo-cd
 * ArgoCD quick start https://www.youtube.com/watch?v=MeU5_k9ssrs
+* https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack
+* https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md
+* 
 
 
 # Find code repos
@@ -19,7 +22,7 @@ This repo is used to install all the stuff we need to K8N via ArgoCD
 6. Login into UI with user admin and password (ignore the % sign at the end of the decoded password)
 
 # Configure CD for meet-stackit
-* `kubectl apply -f argoCD-config/meet-stackit.yaml`
+* `kubectl apply -f argoCD-config/applications/meet-stackit.yaml`
 
 
 
