@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: meet-stackit
+  labels:
+    app: meet-stackit
+
+spec:
+  selector:
+    matchLabels:
+      app: meet-stackit
+  endpoints:
+  - port: web
+
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: meet-stackit-test
+  labels:
+    app: meet-stackit
+
+spec:
+  selector:
+    matchLabels:
+      app: meet-stackit-test
+  endpoints:
+  - port: web
