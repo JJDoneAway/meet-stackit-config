@@ -22,7 +22,14 @@ This repo is used to install all the stuff we need to K8N via ArgoCD
 6. Login into UI with user admin and password (ignore the % sign at the end of the decoded password)
 
 # Configure CD for meet-stackit
-* `kubectl apply -f argoCD-config/applications/meet-stackit.yaml`
+1. Install ArgoCD: `kubectl apply -f argoCD-config/applications/meet-stackit.yaml`
+2. Install kube-prometheus stack: `kubectl apply -f argoCD-config/applications/kube-prometheus-stack.yaml`
+3. Install prometheus operator extra (there is currently a bug, so we have to do it extra): `kubectl apply -f argoCD-config/applications/prometheus-operator.yaml`
+4. Install Ingres:
+5. Install demo application: `kubectl apply -f argoCD-config/applications/meet-stackit.yaml`
+6. Install prometheus monitoring for demo application: `kubectl apply -f argoCD-config/applications/prometheus.yaml`
+
+
 
 
 

@@ -12,6 +12,8 @@ spec:
       values: |-
         grafana:
           enabled: false
+        prometheus:
+          enabled: false
       skipCrds: true
     chart: kube-prometheus-stack
   destination:
