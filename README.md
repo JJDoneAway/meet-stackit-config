@@ -6,12 +6,17 @@ This repo is used to install all the stuff we need to K8N via ArgoCD
 * ArgoCD quick start https://www.youtube.com/watch?v=MeU5_k9ssrs
 * https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack
 * https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md
-* 
 
 
 # Find code repos
 * https://github.com/JJDoneAway/meet-stackit
 * https://github.com/JJDoneAway/meet-stackit-test
+
+# Setup K8N Cluster
+* Create K8N Cluster on https://portal.stackit.cloud
+* Download kubeconfig an store it as .kube/config
+* test kubectl `kubectl get all`
+* install lens: https://k8slens.dev/
 
 # Install ArgoCD
 1. `kubectl create namespace argocd`
