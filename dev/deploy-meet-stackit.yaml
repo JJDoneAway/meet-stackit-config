@@ -20,6 +20,17 @@ spec:
       containers:
       - image: hoehne/meet-stackit:1
         name: meet-stackit
+        env:
+          - name: DB_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: db-secret
+                key: username
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: db-secret
+                key: password
         resources:
           requests:
             memory: 100Mi
