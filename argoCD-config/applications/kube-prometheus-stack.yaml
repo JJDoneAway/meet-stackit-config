@@ -13,7 +13,7 @@ spec:
         grafana:
           enabled: false
         prometheus:
-          enabled: false
+          enabled: true
         alertmanager:
           enabled: false
         kubeApiServer:
@@ -33,7 +33,7 @@ spec:
         kubeProxy:
           enabled: false
         kubeStateMetrics:
-          enabled: false
+          enabled: true
       skipCrds: true
     chart: kube-prometheus-stack
   destination:
