@@ -18,7 +18,7 @@ spec:
         scraper: meet-stackit-prom
     spec:
       containers:
-      - image: hoehne/meet-stackit:8
+      - image: hoehne/meet-stackit:9
         name: meet-stackit
         env:
           - name: DB_USERNAME
