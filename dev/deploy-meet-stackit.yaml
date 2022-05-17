@@ -24,13 +24,28 @@ spec:
           - name: DB_USERNAME
             valueFrom:
               secretKeyRef:
-                name: db-secret
+                name: db-secret-2
                 key: username
           - name: DB_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: db-secret
+                name: db-secret-2
                 key: password
+          - name: HOST 
+            valueFrom:
+              configMapKeyRef:
+                name: db_config-2
+                key: host
+          - name: PORT 
+            valueFrom:
+              configMapKeyRef:
+                name: db_config-2
+                key: port
+          - name: DB 
+            valueFrom:
+              configMapKeyRef:
+                name: db_config-2
+                key: db
         resources:
           requests:
             memory: 100Mi
@@ -84,32 +99,6 @@ spec:
   - http:
       paths:
       - path: /meet-stackit(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: meet-stackit-service
-            port:
-              number: 80
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: meet-stackit-ingress-block-actuator
-  labels:
-    scraper: meet-stackit-prom
-  annotations:
-     nginx.ingress.kubernetes.io/rewrite-target: /$2
-     nginx.ingress.kubernetes.io/server-snippet: |
-      location ~* "^/meet-stackit/actuator" {
-          deny all;
-          return 403;
-        }
-spec:
-  ingressClassName: nginx
-  rules:
-  - http:
-      paths:
-      - path: /meet-stackit/actuator(/|$)(.*)
         pathType: Prefix
         backend:
           service:

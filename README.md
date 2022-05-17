@@ -33,8 +33,3 @@ This repo is used to install all the stuff we need to K8N via ArgoCD
 4. Install Ingres: `kubectl apply -f argoCD-config/applications/ingreee-controller-nginx.yaml`
 5. Install demo application: `kubectl apply -f argoCD-config/applications/meet-stackit.yaml`
 6. Install prometheus monitoring for demo application: `kubectl apply -f argoCD-config/applications/prometheus.yaml`
-
-
-
-
-

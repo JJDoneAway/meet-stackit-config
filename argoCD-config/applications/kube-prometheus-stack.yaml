@@ -11,15 +11,17 @@ spec:
     helm:
       values: |-
         grafana:
-          enabled: false
+          enabled: true
         prometheus:
           enabled: true
+          service:
+            type: LoadBalancer
         alertmanager:
           enabled: false
         kubeApiServer:
           enabled: false
         kubelet:
-          enabled: false
+          enabled: true
         kubeControllerManager:
           enabled: false
         coreDns:
