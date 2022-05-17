@@ -34,17 +34,17 @@ spec:
           - name: HOST 
             valueFrom:
               configMapKeyRef:
-                name: db_config-2
+                name: db-config-2
                 key: host
           - name: PORT 
             valueFrom:
               configMapKeyRef:
-                name: db_config-2
+                name: db-config-2
                 key: port
           - name: DB 
             valueFrom:
               configMapKeyRef:
-                name: db_config-2
+                name: db-config-2
                 key: db
         resources:
           requests:
