@@ -14,14 +14,14 @@ spec:
           enabled: true
         prometheus:
           enabled: true
-          service:
+          service:            
             type: LoadBalancer
         alertmanager:
-          enabled: false
+          enabled: true
         kubeApiServer:
           enabled: false
         kubelet:
-          enabled: true
+          enabled: false
         kubeControllerManager:
           enabled: false
         coreDns:
