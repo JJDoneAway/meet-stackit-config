@@ -10,3 +10,12 @@ spec:
   serviceMonitorSelector:
     matchLabels:
       app: meet-stackit
+  alerting:
+    alertmanagers:
+    - namespace: meet-stackit
+      name: meet-stackit-alertmanager
+      port: web
+  ruleSelector:
+    matchLabels:
+      role: alert-rules
+      prometheus: prometheus

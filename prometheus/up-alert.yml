@@ -2,9 +2,9 @@ apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
   labels:
-    prometheus: kube-prometheus-stack-prometheus
+    prometheus: prometheus
     role: alert-rules
-  name: meet-stackit
+  name: meet-stackit-up-check
 spec:
   groups:
     - name: "meet-stackit.rules"
