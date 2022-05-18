@@ -18,7 +18,7 @@ spec:
         scraper: meet-stackit-prom
     spec:
       containers:
-      - image: johanneshoehne1498/meet-stackit:2
+      - image: johanneshoehne1498/meet-stackit:3
         name: meet-stackit
         env:
           - name: DB_USERNAME
@@ -56,7 +56,7 @@ spec:
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
-            path: actuator/health/livenessState
+            path: /
             port: 8080
           initialDelaySeconds: 60
           periodSeconds: 10
