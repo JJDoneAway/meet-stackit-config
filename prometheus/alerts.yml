@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    prometheus: prometheus
+    role: alert-rules
+  name: meet-stackit-alerts
+spec:
+  groups:
+    - name: "meet-stackit.rules"
+      rules:
+        - alert: AllPodsDown
+          for: 1m
+          expr: sum(up{job="meet-stackit-service"} < 1 or absent(up{job="meet-stackit-service"}))
+          annotations:
+            message: The deployment of meet-stackit has less than 1 pod running.
+        - alert: ToManyPersons
+          for: 1m
+          expr: sum(max by(application) (person_anount) > 6000000)
+          annotations:
+            message: There are to many persons persisted. Please clean up

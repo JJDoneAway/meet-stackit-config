@@ -6,6 +6,7 @@ This repo is used to install all the stuff we need to K8N via ArgoCD
 * ArgoCD quick start https://www.youtube.com/watch?v=MeU5_k9ssrs
 * https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack
 * https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md
+* Alerts => https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/alerting.md
 
 
 # Find code repos
