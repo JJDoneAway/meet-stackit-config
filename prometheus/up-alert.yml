@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    prometheus: kube-prometheus-stack-prometheus
+    role: alert-rules
+  name: meet-stackit
+spec:
+  groups:
+    - name: "meet-stackit.rules"
+      rules:
+        - alert: PodDown
+          for: 1m
+          expr: sum(up{job="meet-stackit-service"} < 1 or absent(up{job="meet-stackit-service"}))
+          annotations:
+            message: The deployment has less than 1 pod running.
