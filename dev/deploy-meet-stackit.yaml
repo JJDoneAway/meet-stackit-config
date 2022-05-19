@@ -51,6 +51,7 @@ spec:
             memory: 100Mi
           limits:
             memory: 600Mi
+            cpu: 2
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
