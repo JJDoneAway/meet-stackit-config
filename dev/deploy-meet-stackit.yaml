@@ -52,7 +52,7 @@ spec:
             cpu: 750m
           limits:
             memory: 600Mi
-            cpu: 3000m
+            cpu: 2000m
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
