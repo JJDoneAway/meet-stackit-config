@@ -16,6 +16,6 @@ spec:
             message: The deployment of meet-stackit has less than 1 pod running.
         - alert: ToManyPersons
           for: 1m
-          expr: sum(max by(application) (person_anount) > 6000000)
+          expr: sum(max by(application) (person_anount) > 900000)
           annotations:
             message: There are to many persons persisted. Please clean up
