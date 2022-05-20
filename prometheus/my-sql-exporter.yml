@@ -52,3 +52,21 @@ spec:
             cpu: 500m        
         ports:
         - containerPort: 9104
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysqld-exporter-service
+  labels:
+    app: mysqld-exporter
+    scraper: meet-stackit-prom
+spec:
+  ports:
+  - name: web
+    port: 80
+    protocol: TCP
+    targetPort: 9104
+  selector:
+    app: mysqld-exporter
+  type: ClusterIP
+---
