@@ -7,6 +7,7 @@ This repo is used to install all the stuff we need to K8N via ArgoCD
 * https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack
 * https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md
 * Alerts => https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/alerting.md
+* MySQL exporter ==> https://github.com/prometheus/mysqld_exporter
 
 
 # Find code repos
