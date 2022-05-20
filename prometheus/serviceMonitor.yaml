@@ -43,4 +43,4 @@ spec:
       app: mysqld-exporter
   endpoints:
   - port: web
-    path: /actuator/prometheus
+    path: /metrics
