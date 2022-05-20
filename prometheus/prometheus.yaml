@@ -19,3 +19,5 @@ spec:
     matchLabels:
       role: alert-rules
       prometheus: prometheus
+#  remoteWrite:
+#    - url: http://193.148.173.221:10908/api/v1/receive
