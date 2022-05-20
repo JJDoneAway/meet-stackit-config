@@ -21,7 +21,7 @@ This repo is used to install all the stuff we need to K8N via ArgoCD
 
 # Install ArgoCD
 1. `kubectl create namespace argocd`
-2. `kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml`
+2. `kubectl apply -n argocd -f https://raw.githubusercontent.com/JJDoneAway/meet-stackit-config/main/argoCD-config/install.yml`
 3. wait until a public ip is asigned to the argocd server `kubectl get -n argocd svc  argocd-server`
 4. open UI e.g.: https://193.148.170.178/ (ignor the security warnings as it is just a selfe signed certificate)
 5. get password out of the secret `kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d `
