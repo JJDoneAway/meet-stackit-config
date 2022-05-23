@@ -12,10 +12,16 @@ spec:
         - alert: AllPodsDown
           for: 1m
           expr: sum(up{job="meet-stackit-service"} < 1 or absent(up{job="meet-stackit-service"}))
+          labels:
+            app: meet-stackit
+            allert: technical
           annotations:
             message: The deployment of meet-stackit has less than 1 pod running.
         - alert: ToManyPersons
           for: 1m
           expr: sum(max by(application) (person_anount) > 900000)
+          labels:
+            app: meet-stackit
+            allert: bussines
           annotations:
             message: There are to many persons persisted. Please clean up
