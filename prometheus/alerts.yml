@@ -9,14 +9,6 @@ spec:
   groups:
     - name: "meet-stackit.rules"
       rules:
-        - alert: AllPodsDown
-          for: 1m
-          expr: sum(up{job="meet-stackit-service"} < 1 or absent(up{job="meet-stackit-service"}))
-          labels:
-            app: meet-stackit
-            allert: technical
-          annotations:
-            message: The deployment of meet-stackit has less than 1 pod running.
         - alert: ToManyPersons
           for: 1m
           expr: sum(max by(application) (person_anount) > 900000)
@@ -25,3 +17,47 @@ spec:
             allert: business
           annotations:
             message: There are to many persons persisted. Please clean up
+
+
+
+        - alert: AllPodsDown
+          for: 1m
+          expr: sum(up{job="meet-stackit-service"} < 1 or absent(up{job="meet-stackit-service"}))
+          labels:
+            app: meet-stackit
+            allert: technical
+          annotations:
+            message: The deployment of meet-stackit has less than 1 pod running.
+
+        - alert: MysqlDown
+          expr: mysql_up == 0
+          for: 0m
+          labels:
+            app: meet-stackit
+            allert: technical
+            severity: critical
+          annotations:
+            summary: MySQL down (instance {{ $labels.instance }})
+            description: "MySQL instance is down on {{ $labels.instance }}\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+
+        - alert: MysqlTooManyConnections(>80%)
+          expr: max_over_time(mysql_global_status_threads_connected[1m]) / mysql_global_variables_max_connections * 100 > 80
+          for: 2m
+          labels:
+            severity: warning
+            app: meet-stackit
+            allert: technical
+          annotations:
+            summary: MySQL too many connections (> 80%) (instance {{ $labels.instance }})
+            description: "More than 80% of MySQL connections are in use on {{ $labels.instance }}\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+
+        - alert: JvmMemoryFillingUp
+          expr: (sum by (instance)(jvm_memory_used_bytes{area="heap"}) / sum by (instance)(jvm_memory_max_bytes{area="heap"})) * 100 > 80
+          for: 2m
+          labels:
+            severity: warning
+            app: meet-stackit
+            allert: technical
+          annotations:
+            summary: JVM memory filling up (instance {{ $labels.instance }})
+            description: "JVM memory is filling up (> 80%)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
