@@ -24,22 +24,22 @@ spec:
           - name: DB_USERNAME
             valueFrom:
               secretKeyRef:
-                name: db-secret-2
+                name: db-secret
                 key: username
           - name: DB_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: db-secret-2
+                name: db-secret
                 key: password
           - name: HOST 
             valueFrom:
               configMapKeyRef:
-                name: db-config-2
+                name: db-config
                 key: host
           - name: PORT 
             valueFrom:
               configMapKeyRef:
-                name: db-config-2
+                name: db-config
                 key: port
           - name: DATA_SOURCE_NAME
             value: $(DB_USERNAME):$(DB_PASSWORD)@($(HOST):$(PORT))/

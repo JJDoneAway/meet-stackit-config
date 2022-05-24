@@ -18,34 +18,36 @@ spec:
         scraper: meet-stackit-prom
     spec:
       containers:
-      - image: johanneshoehne1498/meet-stackit:6
+      - image: johanneshoehne1498/meet-stackit:7
         name: meet-stackit
         env:
           - name: DB_USERNAME
             valueFrom:
               secretKeyRef:
-                name: db-secret-2
+                name: db-secret
                 key: username
           - name: DB_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: db-secret-2
+                name: db-secret
                 key: password
           - name: HOST 
             valueFrom:
               configMapKeyRef:
-                name: db-config-2
+                name: db-config
                 key: host
           - name: PORT 
             valueFrom:
               configMapKeyRef:
-                name: db-config-2
+                name: db-config
                 key: port
           - name: DB 
             valueFrom:
               configMapKeyRef:
-                name: db-config-2
+                name: db-config
                 key: db
+          - name: max-persons
+            value: "250000"
         resources:
           requests:
             memory: 100Mi
