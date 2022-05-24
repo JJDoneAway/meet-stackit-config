@@ -13,6 +13,7 @@ spec:
           for: 1m
           expr: sum(max by(application) (person_anount) > 900000)
           labels:
+            severity: warning
             app: meet-stackit
             allert: business
           annotations:
@@ -24,6 +25,7 @@ spec:
           for: 1m
           expr: sum(up{job="meet-stackit-service"} < 1 or absent(up{job="meet-stackit-service"}))
           labels:
+            severity: critical
             app: meet-stackit
             allert: technical
           annotations:

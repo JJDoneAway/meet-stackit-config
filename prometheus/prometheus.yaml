@@ -19,5 +19,5 @@ spec:
     matchLabels:
       role: alert-rules
       prometheus: prometheus
-#  remoteWrite:
-#    - url: http://193.148.173.221:10908/api/v1/receive
+  remoteWrite:
+  - url: http://193.148.173.72/thanos-receive/api/v1/receive
