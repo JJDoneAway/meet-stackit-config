@@ -11,7 +11,7 @@ spec:
       rules:
         - alert: ToManyPersons
           for: 1m
-          expr: sum(max by(application) (person_anount) > 900000)
+          expr: sum(max by(application) (person_anount) > 450000)
           labels:
             severity: warning
             app: meet-stackit

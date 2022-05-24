@@ -47,7 +47,10 @@ spec:
                 name: db-config
                 key: db
           - name: max-persons
-            value: "250000"
+            valueFrom:
+              configMapKeyRef:
+                name: db-config
+                key: max-persons
         resources:
           requests:
             memory: 100Mi
