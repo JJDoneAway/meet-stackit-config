@@ -18,13 +18,24 @@ metadata:
     alertmanagerConfig: meet-stackit
 spec:
   route:
-    receiver: 'grafana_oncall'
+  - receiver: 'grafana_oncall'
     groupBy: [alert, app]
+  - receiver: 'amixr-heartbeat'
+    match:
+      alertname: heartbeat
+    groupWait: 0s
+    groupInterval: 1m
+    repeatInterval: 50s  
+
   receivers:
   - name: 'grafana_oncall'
     webhookConfigs:
     - url: https://a-prod-us-central-0.grafana.net/integrations/v1/alertmanager/WLWMH9SJTcxYbTV0GplsKmq78/
       sendResolved: true
+  - name: 'amixr-heartbeat'
+    webhookConfigs:
+    - url: https://a-prod-us-central-0.grafana.net/integrations/v1/alertmanager/WLWMH9SJTcxYbTV0GplsKmq78/heartbeat/
+      sendResolved: false
 ---
 apiVersion: v1
 kind: Service
