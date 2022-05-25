@@ -22,9 +22,9 @@ spec:
     groupBy: [alertname, datacenter, app]
   receivers:
   - name: 'grafana_oncall'
-    webhook_configs:
+    webhookConfigs:
     - url: https://a-prod-us-central-0.grafana.net/integrations/v1/alertmanager/WLWMH9SJTcxYbTV0GplsKmq78/
-      send_resolved: true
+      sendResolved: true
 ---
 apiVersion: v1
 kind: Service
