@@ -37,8 +37,6 @@ metadata:
 spec:
   route:
     receiver: 'amixr-heartbeat'
-    match:
-      alertname: heartbeat
     groupWait: 0s
     groupInterval: 1m
     repeatInterval: 50s  
