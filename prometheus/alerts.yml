@@ -8,7 +8,7 @@ metadata:
 spec:
   groups:
   - name: meta
-      rules:
+    rules:
       - alert: heartbeat
         expr: vector(1)
         labels:
