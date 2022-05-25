@@ -15,7 +15,7 @@ spec:
           labels:
             severity: warning
             app: meet-stackit
-            allert: business
+            alert: business
           annotations:
             message: There are to many persons persisted. Please clean up
 
@@ -27,7 +27,7 @@ spec:
           labels:
             severity: critical
             app: meet-stackit
-            allert: technical
+            alert: technical
           annotations:
             message: The deployment of meet-stackit has less than 1 pod running.
 
@@ -36,7 +36,7 @@ spec:
           for: 0m
           labels:
             app: meet-stackit
-            allert: technical
+            alert: technical
             severity: critical
           annotations:
             summary: MySQL down (instance {{ $labels.instance }})
@@ -48,7 +48,7 @@ spec:
           labels:
             severity: warning
             app: meet-stackit
-            allert: technical
+            alert: technical
           annotations:
             summary: MySQL too many connections (> 80%) (instance {{ $labels.instance }})
             description: "More than 80% of MySQL connections are in use on {{ $labels.instance }}\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
@@ -59,7 +59,7 @@ spec:
           labels:
             severity: warning
             app: meet-stackit
-            allert: technical
+            alert: technical
           annotations:
             summary: JVM memory filling up (instance {{ $labels.instance }})
             description: "JVM memory is filling up (> 80%)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
