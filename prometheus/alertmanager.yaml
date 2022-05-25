@@ -18,12 +18,13 @@ metadata:
     alertmanagerConfig: meet-stackit
 spec:
   route:
-    groupBy: ['job']
-    groupWait: 30s
-    groupInterval: 5m
-    repeatInterval: 12h
-    receiver: 'meet-stackit-slack'
-
+    receiver: 'grafana_oncall'
+    group_by: [alertname, datacenter, app]
+  receivers:
+  - name: 'grafana_oncall'
+    webhook_configs:
+    - url: https://a-prod-us-central-0.grafana.net/integrations/v1/alertmanager/WLWMH9SJTcxYbTV0GplsKmq78/
+      send_resolved: true
 ---
 apiVersion: v1
 kind: Service
