@@ -19,7 +19,7 @@ metadata:
 spec:
   route:
     receiver: 'grafana_oncall'
-    groupBy: [allert, app]
+    groupBy: [alert, app]
   receivers:
   - name: 'grafana_oncall'
     webhookConfigs:
