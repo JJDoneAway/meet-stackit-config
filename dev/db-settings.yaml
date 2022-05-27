@@ -3,8 +3,8 @@ kind: Secret
 metadata:
   name: db-secret
 data:
-  username: YTlzZGY1ZjFiZjUyNDA1NGE4NzFiYjg1Nzg0YTNlYg==
-  password: YTlzMzVmNmE5OTVmNzYwNTJjNWMyZjJlOTBhNDQ0ZjU2NjI2ZjMyNjVkYw==
+  username: YTlzZjEyYjkxYjkxNmIxZWQ4YWIxM2I3YmU1YWJkMg==
+  password: YTlzODMyYTNlMWNhMmZhNDg3NTJlYzNlM2M4ZTFjODM0MTE2ZWY5YWVkMw==
 ---
 apiVersion: v1
 kind: ConfigMap
