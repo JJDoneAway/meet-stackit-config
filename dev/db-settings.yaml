@@ -3,15 +3,15 @@ kind: Secret
 metadata:
   name: db-secret
 data:
-  username: YTlzZjEyYjkxYjkxNmIxZWQ4YWIxM2I3YmU1YWJkMg==
-  password: YTlzODMyYTNlMWNhMmZhNDg3NTJlYzNlM2M4ZTFjODM0MTE2ZWY5YWVkMw==
+  username: YTlzNDQxZDk5MTFjYjg4MGU2YWQ5YmY3MTcyOTExNg==
+  password: YTlzMmIyNmZjMzJlNWUyODEzNzlhYTgxOGY0OTM4YzBmNTI2NjE3ZmRjYw==
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: db-config
 data:
-  host: "msd92036f-1.data.eu01.onstackit.cloud"
-  port: "49215"
-  db: "msd92036f"
-  max-persons: "250000"
+  host: "msd26c2c0-1.data.eu01.onstackit.cloud"
+  port: "49300"
+  db: "msd26c2c0"
+  max-persons: "2500"
