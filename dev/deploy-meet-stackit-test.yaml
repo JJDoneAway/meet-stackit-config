@@ -6,7 +6,7 @@ metadata:
     app: meet-stackit-test
     scraper: meet-stackit-prom
 spec:
-  replicas: 0
+  replicas: 1
   strategy:
     type: Recreate
   revisionHistoryLimit: 0
@@ -20,7 +20,7 @@ spec:
         scraper: meet-stackit-prom
     spec:
       containers:
-      - image: johanneshoehne1498/meet-stackit-test:4
+      - image: johanneshoehne1498/meet-stackit-test:5
         name: meet-stackit-test
         resources:
           requests:
