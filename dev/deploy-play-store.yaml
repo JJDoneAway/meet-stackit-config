@@ -21,7 +21,7 @@ spec:
         args:
           - /bin/sh
           - -c
-          - while true; sleep 600; done;
+          - while true; do sleep 600; done
         resources:
           requests:
             memory: 100Mi
