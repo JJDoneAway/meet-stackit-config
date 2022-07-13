@@ -22,7 +22,7 @@ spec:
           - /bin/sh
           - -c
           - |
-             'while true; do sleep 600; done'
+             while true; do sleep 600; done
         resources:
           requests:
             memory: 10Mi
