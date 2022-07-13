@@ -21,7 +21,7 @@ spec:
         args:
           - /bin/sh
           - -c
-          - while true; do sleep 600; done
+          - export JOHANNES=Ist_toll; while true; do sleep 600; done
         resources:
           requests:
             memory: 10Mi
