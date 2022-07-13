@@ -24,23 +24,23 @@ spec:
           - while true; do sleep 600; done
         resources:
           requests:
-            memory: 100Mi
-            cpu: 200m
+            memory: 10Mi
+            cpu: 10m
           limits:
-            memory: 600Mi
-            cpu: 500m
+            memory: 20Mi
+            cpu: 20m
         imagePullPolicy: Always
         livenessProbe:
           exec:
             command:
               - touch
               - /tmp/check
-          initialDelaySeconds: 5
+          initialDelaySeconds: 1
           periodSeconds: 5
         readinessProbe:
           exec:
             command:
               - touch
               - /tmp/check
-          initialDelaySeconds: 5
+          initialDelaySeconds: 1
           periodSeconds: 5
