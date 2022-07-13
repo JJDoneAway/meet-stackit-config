@@ -30,13 +30,13 @@ spec:
           exec:
             command:
               - touch
-              - check
-          initialDelaySeconds: 1
+              - /tmp/check
+          initialDelaySeconds: 5
           periodSeconds: 5
         readinessProbe:
           exec:
             command:
               - touch
-              - check
-          initialDelaySeconds: 1
+              - /tmp/check
+          initialDelaySeconds: 5
           periodSeconds: 5
