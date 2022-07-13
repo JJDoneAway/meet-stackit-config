@@ -26,17 +26,3 @@ spec:
             memory: 600Mi
             cpu: 500m
         imagePullPolicy: Always
-        livenessProbe:
-          exec:
-            command:
-              - touch
-              - /tmp/check
-          initialDelaySeconds: 5
-          periodSeconds: 5
-        readinessProbe:
-          exec:
-            command:
-              - touch
-              - /tmp/check
-          initialDelaySeconds: 5
-          periodSeconds: 5
