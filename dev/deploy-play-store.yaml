@@ -18,3 +18,29 @@ spec:
       containers:
       - image: alpine/curl
         name: play-store
+        args:
+          - /bin/sh
+          - -c
+          - while true; sleep 600; done;
+        resources:
+          requests:
+            memory: 100Mi
+            cpu: 200m
+          limits:
+            memory: 600Mi
+            cpu: 500m
+        imagePullPolicy: Always
+        livenessProbe:
+          exec:
+            command:
+              - touch
+              - /tmp/check
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        readinessProbe:
+          exec:
+            command:
+              - touch
+              - /tmp/check
+          initialDelaySeconds: 5
+          periodSeconds: 5
