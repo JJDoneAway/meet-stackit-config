@@ -29,14 +29,14 @@ spec:
         livenessProbe:
           exec:
             command:
-              - echo
-              - '0'
+              - touch
+              - check
           initialDelaySeconds: 1
           periodSeconds: 5
         readinessProbe:
           exec:
             command:
-              - echo
-              - '0'
+              - touch
+              - check
           initialDelaySeconds: 1
           periodSeconds: 5
