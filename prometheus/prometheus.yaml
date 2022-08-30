@@ -20,4 +20,4 @@ spec:
       role: alert-rules
       prometheus: prometheus
   remoteWrite:
-  - url: http://193.148.173.72/thanos-receive/api/v1/receive
+  - url: http://193.148.171.18/thanos-receive/api/v1/receive
